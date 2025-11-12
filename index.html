@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our 1st Anniversary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000;
+            color: #ff69b4; /* 亮粉色字体 */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        /* 合照样式 */
+        .couple-photo {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            margin: 0 auto 30px;
+            border: 3px solid #ff69b4;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+        }
+        /* 文字样式 */
+        .moments {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #ff69b4;
+        }
+        .anniversary-text {
+            font-size: 24px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+        }
+        .recording-hint {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        /* 录音条样式 */
+        .audio-player {
+            width: 70%;
+            max-width: 500px;
+            margin: 0 auto 50px;
+            filter: hue-rotate(320deg) saturate(150%); /* 录音条粉色调适配 */
+        }
+        /* 滚动字幕容器 - 散乱不重叠专用 */
+        .thanks-container {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+        /* 滚动字幕样式 - 散乱无重叠 */
+        .thanks-scroll {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            animation: scrollUp 45s linear infinite; /* 平衡速度与可读性 */
+        }
+        .thanks-scatter {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px; /* 固定间距防止重叠 */
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .thanks-item {
+            font-size: 18px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            padding: 6px 10px;
+            /* 随机偏移但保留间距 */
+            position: relative;
+            left: calc(random() * 15% - 7.5%); /* 缩小偏移范围（±7.5%） */
+            top: calc(random() * 12px - 6px); /* 上下轻微错落 */
+            white-space: nowrap; /* 防止文字换行 */
+            background: rgba(255, 105, 180, 0.05); /* 透明背景增强区分度 */
+            border-radius: 4px;
+        }
+        /* 跃动效果：不影响间距的轻微浮动 */
+        @keyframes scrollUp {
+            0% { top: 100%; }
+            100% { top: -4000px; }
+        }
+        .thanks-item:hover {
+            transform: scale(1.2) translateY(-5px);
+            opacity: 1;
+            text-shadow: 0 0 15px #ff69b4;
+            background: rgba(255, 105, 180, 0.1);
+            z-index: 10;
+        }
+        /* 随机跃动动画 - 不重叠 */
+        @keyframes jumpScatter {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(calc(random() * 8px - 4px)); }
+        }
+        .thanks-item {
+            animation: jumpScatter calc(2s + random() * 2s) ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- 合照（已替换为有效直链） -->
+    <img src="https://s21.ax1x.com/2025/11/10/pZ9aTd1.jpg" alt="Our Photo" class="couple-photo">
+    <!-- 文字内容 -->
+    <div class="moments">MOMENTS</div>
+    <div class="anniversary-text">The first one year for us</div>
+    <div class="recording-hint">please listen to the recording when we are together</div>
+    <!-- 录音播放条（已替换为GitHub录音文件链接） -->
+    <audio controls class="audio-player">
+        <source src="https://raw.githubusercontent.com/pilot12138-aaa/pilot/main/%E4%B8%80%E5%91%A8%E5%B9%B4.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放，请更新浏览器。
+    </audio>
+    <!-- 三百种"谢谢"散乱不重叠滚动字幕 -->
+    <div class="thanks-container">
+        <div class="thanks-scroll">
+            <div class="thanks-scatter">
+                <div class="thanks-item">谢谢</div>
+                <div class="thanks-item">Thank you</div>
+                <div class="thanks-item">Merci</div>
+                <div class="thanks-item">Danke</div>
+                <div class="thanks-item">Gracias</div>
+                <div class="thanks-item">Grazie</div>
+                <div class="thanks-item">ありがとう</div>
+                <div class="thanks-item">감사합니다</div>
+                <div class="thanks-item">Спасибо</div>
+                <div class="thanks-item">ขอบคุณ</div>
+                <div class="thanks-item">Terima kasih</div>
+                <div class="thanks-item">Xiexie</div>
+                <div class="thanks-item">Obrigado/a</div>
+                <div class="thanks-item">Multumesc</div>
+                <div class="thanks-item">Tak</div>
+                <div class="thanks-item">Tack</div>
+                <div class="thanks-item">Kiitos</div>
+                <div class="thanks-item">Bedankt</div>
+                <div class="thanks-item">Merci beaucoup</div>
+                <div class="thanks-item">Vielen Dank</div>
+                <div class="thanks-item">Muchas gracias</div>
+                <div class="thanks-item">Molte grazie</div>
+                <div class="thanks-item">ありがとうございます</div>
+                <div class="thanks-item">고마워요</div>
+                <div class="thanks-item">Большое спасибо</div>
+                <div class="thanks-item">ขอบคุณมาก</div>
+                <div class="thanks-item">Terima kasih banyak</div>
+                <div class="thanks-item">Muito obrigado/a</div>
+                <div class="thanks-item">Multumesc foarte mult</div>
+                <div class="thanks-item">Tack så mycket</div>
+                <div class="thanks-item">Tak skal du have</div>
+                <div class="thanks-item">Kiitos paljon</div>
+                <div class="thanks-item">Hartelijk bedankt</div>
+                <div class="thanks-item">شكراً</div>
+                <div class="thanks-item">شكراً جزيلاً</div>
+                <div class="thanks-item">תודה</div>
+                <div class="thanks-item">תודה רבה</div>
+                <div class="thanks-item">धन्यवाद</div>
+                <div class="thanks-item">बहुत धन्यवाद</div>
+                <div class="thanks-item">شکریہ</div>
+                <div class="thanks-item">بہت شکریہ</div>
+                <div class="thanks-item">Cảm ơn</div>
+                <div class="thanks-item">Cảm ơn rất nhiều</div>
+                <div class="thanks-item">ขອບໃຈ</div>
+                <div class="thanks-item">ขອບໃຈຫຼາຍ</div>
+                <div class="thanks-item">Спасибі</div>
+                <div class="thanks-item">Дуже дякую</div>
+                <div class="thanks-item">Podziękowanie</div>
+                <div class="thanks-item">Bardzo dziękuję</div>
+                <div class="thanks-item">Hvala</div>
+                <div class="thanks-item">Hvala puno</div>
+                <div class="thanks-item">Děkuji</div>
+                <div class="thanks-item">Děkuji mnohokrát</div>
+                <div class="thanks-item">Ďakujem</div>
+                <div class="thanks-item">Ďakujem veľmi pekne</div>
+                <div class="thanks-item">Tänan</div>
+                <div class="thanks-item">Paldies</div>
+                <div class="thanks-item">Liels paldies</div>
+                <div class="thanks-item">Pateicos</div>
+                <div class="thanks-item">Didelis ačiū</div>
+                <div class="thanks-item">Gracias a vosotros</div>
+                <div class="thanks-item">Grazie a voi</div>
+                <div class="thanks-item">Thank you very much</div>
+                <div class="thanks-item">Thanks a lot</div>
+                <div class="thanks-item">Thanks a bunch</div>
+                <div class="thanks-item">Merci mille fois</div>
+                <div class="thanks-item">Danke schön</div>
+                <div class="thanks-item">Vielen lieben Dank</div>
+                <div class="thanks-item">Muchísimas gracias</div>
+                <div class="thanks-item">Molte, molte grazie</div>
+                <div class="thanks-item">どうもありがとう</div>
+                <div class="thanks-item">고마워</div>
+                <div class="thanks-item">Спасибо большое</div>
+                <div class="thanks-item">ขอบคุณจริงๆ</div>
+                <div class="thanks-item">Terima kasih yang banyak sekali</div>
+                <div class="thanks-item">Muito, muito obrigado/a</div>
+                <div class="thanks-item">Multumesc din suflet</div>
+                <div class="thanks-item">Tack så himla mycket</div>
+                <div class="thanks-item">Tak for det</div>
+                <div class="thanks-item">Kiitos siitä</div>
+                <div class="thanks-item">Bedankt voor alles</div>
+                <div class="thanks-item">شكراً لكم</div>
+                <div class="thanks-item">תודה לכם</div>
+                <div class="thanks-item">धन्यवाद आपको</div>
+                <div class="thanks-item">شکریہ آپ کو</div>
+                <div class="thanks-item">Cảm ơn bạn</div>
+                <div class="thanks-item">Cảm ơn mọi người</div>
+                <div class="thanks-item">ขอบໃຈເຈົ້າ</div>
+                <div class="thanks-item">Спасибі вам</div>
+                <div class="thanks-item">Dziękuję ci</div>
+                <div class="thanks-item">Dziękuję państwu</div>
+                <div class="thanks-item">Hvala vam</div>
+                <div class="thanks-item">Děkuji vám</div>
+                <div class="thanks-item">Ďakujem vám</div>
+                <div class="thanks-item">Tänan sind</div>
+                <div class="thanks-item">Tänan teid</div>
+                <div class="thanks-item">Paldies tev</div>
+                <div class="thanks-item">Paldies jums</div>
+                <div class="thanks-item">Pateicos tau</div>
+                <div class="thanks-item">Pateicos jums</div>
+                <div class="thanks-item">谢谢侬</div>
+                <div class="thanks-item">多谢</div>
+                <div class="thanks-item">感激</div>
+                <div class="thanks-item">承蒙关照</div>
+                <div class="thanks-item">Thank you so much</div>
+                <div class="thanks-item">I appreciate it</div>
+                <div class="thanks-item">Many thanks</div>
+                <div class="thanks-item">Merci bien</div>
+                <div class="thanks-item">Danke sehr</div>
+                <div class="thanks-item">Gracias mil</div>
+                <div class="thanks-item">Grazie mille</div>
+                <div class="thanks-item">ありがとうございました</div>
+                <div class="thanks-item">고마웠어요</div>
+                <div class="thanks-item">Спасибо за всё</div>
+                <div class="thanks-item">ขอบคุณที่</div>
+                <div class="thanks-item">Terima kasih atas</div>
+                <div class="thanks-item">Obrigado pelo</div>
+                <div class="thanks-item">Multumesc pentru</div>
+                <div class="thanks-item">Tak för</div>
+                <div class="thanks-item">Tak for at</div>
+                <div class="thanks-item">Kiitos että</div>
+                <div class="thanks-item">Bedankt voor</div>
+                <div class="thanks-item">شكراً على</div>
+                <div class="thanks-item">תודה על</div>
+                <div class="thanks-item">धन्यवाद के लिए</div>
+                <div class="thanks-item">شکریہ کے لئے</div>
+                <div class="thanks-item">Cảm ơn vì</div>
+                <div class="thanks-item">ขอบໃຈຍ້ອນ</div>
+                <div class="thanks-item">Спасибі за</div>
+                <div class="thanks-item">Dziękuję za</div>
+                <div class="thanks-item">Hvala za</div>
+                <div class="thanks-item">Děkuji za</div>
+                <div class="thanks-item">Ďakujem za</div>
+                <div class="thanks-item">Tänan за</div>
+                <div class="thanks-item">Paldies par</div>
+                <div class="thanks-item">Pateicos už</div>
+                <div class="thanks-item">谢谢大家</div>
+                <div class="thanks-item">Thank you all</div>
+                <div class="thanks-item">Merci à tous</div>
+                <div class="thanks-item">Danke an alle</div>
+                <div class="thanks-item">Gracias a todos</div>
+                <div class="thanks-item">Grazie a tutti</div>
+                <div class="thanks-item">みんなにありがとう</div>
+                <div class="thanks-item">여러분에게 감사합니다</div>
+                <div class="thanks-item">Спасибо всем</div>
+                <div class="thanks-item">ขอบคุณทุกคน</div>
+                <div class="thanks-item">Terima kasih kepada semua</div>
+                <div class="thanks-item">Obrigado a todos</div>
+                <div class="thanks-item">Multumesc tuturor</div>
+                <div class="thanks-item">Tak till alla</div>
+                <div class="thanks-item">Tak til alle</div>
+                <div class="thanks-item">Kiitos kaikille</div>
+                <div class="thanks-item">Bedankt aan iedereen</div>
+                <div class="thanks-item">شكراً لجميعكم</div>
+                <div class="thanks-item">תודה לכל</div>
+                <div class="thanks-item">सभी को धन्यवाद</div>
+                <div class="thanks-item">सबको شکریہ</div>
+                <div class="thanks-item">Cảm ơn tất cả mọi người</div>
+                <div class="thanks-item">ขอบคุณทุกคน</div>
+                <div class="thanks-item">Спасибі всім</div>
+                <div class="thanks-item">Dziękuję wszystkim</div>
+                <div class="thanks-item">Hvala svima</div>
+                <div class="thanks-item">Děkuji všem</div>
+                <div class="thanks-item">Ďakujem všetkým</div>
+                <div class="thanks-item">Tänan kõigile</div>
+                <div class="thanks-item">Paldies visiem</div>
+                <div class="thanks-item">Pateicos visiems</div>
+                <div class="thanks-item">叩谢</div>
+                <div class="thanks-item">谢忱</div>
+                <div class="thanks-item">感恩</div>
+                <div class="thanks-item">感念</div>
+                <div class="thanks-item">I'm grateful</div>
+                <div class="thanks-item">I'm thankful</div>
+                <div class="thanks-item">Grateful for you</div>
+                <div class="thanks-item">Merci infiniment</div>
+                <div class="thanks-item">Danke herzlich</div>
+                <div class="thanks-item">Gracias infinitas</div>
+                <div class="thanks-item">Grazie infinite</div>
+                <div class="thanks-item">心からありがとう</div>
+                <div class="thanks-item">정말 감사해요</div>
+                <div class="thanks-item">От всей души спасибо</div>
+                <div class="thanks-item">จากหัวใจขอบคุณ</div>
+                <div class="thanks-item">Dari hati terima kasih</div>
+                <div class="thanks-item">De coração obrigado/a</div>
+                <div class="thanks-item">Din suflet multumesc</div>
+                <div class="thanks-item">Från hjärtat tack</div>
+                <div class="thanks-item">Fra hjerteværet tak</div>
+                <div class="thanks-item">Mielestäni kiitos</div>
+                <div class="thanks-item">Uit het hart bedankt</div>
+                <div class="thanks-item">من القلب شكراً</div>
+                <div class="thanks-item">מהלב תודה</div>
+                <div class="thanks-item">दिल से धन्यवाद</div>
+                <div class="thanks-item">دل سے شکریہ</div>
+                <div class="thanks-item">Từ trái tim cảm ơn</div>
+                <div class="thanks-item">ຈາກຫົວໃຈຂອບໃຈ</div>
+                <div class="thanks-item">Зовсім серйозно дякую</div>
+                <div class="thanks-item">Serdecznie dziękuję</div>
+                <div class="thanks-item">Srcem hvala</div>
+                <div class="thanks-item">Srdcem děkuji</div>
+                <div class="thanks-item">Srdcom ďakujem</div>
+                <div class="thanks-item">Sydämestäni tänan</div>
+                <div class="thanks-item">Noķertāi sirds paldies</div>
+                <div class="thanks-item">Širdies dvelki pateicos</div>
+                <div class="thanks-item">多谢晒</div>
+                <div class="thanks-item">感激不尽</div>
+                <div class="thanks-item">不胜感激</div>
+                <div class="thanks-item">万分感谢</div>
+                <div class="thanks-item">Thank you infinitely</div>
+                <div class="thanks-item">Thanks a million</div>
+                <div class="thanks-item">Thanks a zillion</div>
+                <div class="thanks-item">Merci beaucoup pour tout</div>
+                <div class="thanks-item">Danke für alles, was du tust</div>
+                <div class="thanks-item">Gracias por todo lo que haces</div>
+                <div class="thanks-item">Grazie per tutto quello che fai</div>
+                <div class="thanks-item">あなたがしてくれたことすべてにありがとう</div>
+                <div class="thanks-item">네가 해준 모든 것에 감사해</div>
+                <div class="thanks-item">Спасибо за всё, что ты делаешь</div>
+                <div class="thanks-item">ขอบคุณสำหรับทุกสิ่งที่คุณทำ</div>
+                <div class="thanks-item">Terima kasih untuk semua yang kamu lakukan</div>
+                <div class="thanks-item">Obrigado por tudo o que você faz</div>
+                <div class="thanks-item">Multumesc pentru tot ce faci</div>
+                <div class="thanks-item">Tak för allt du gör</div>
+                <div class="thanks-item">Tak for alt, hvad du gør</div>
+                <div class="thanks-item">Kiitos kaikesta, mitä teet</div>
+                <div class="thanks-item">Bedankt voor alles wat je doet</div>
+                <div class="thanks-item">شكراً لكل شيءທີ່ເຈົ້າເຮັດ</div>
+                <div class="thanks-item">תודה על הכל שאת/אתה עושה</div>
+                <div class="thanks-item">तुम जो कुछ भी करते हो उसके लिए धन्यवाद</div>
+                <div class="thanks-item">آپ جو بھی کرتے ہیں اس کے لیے شکریہ</div>
+                <div class="thanks-item">Cảm ơn cho mọi thứ bạn làm</div>
+                <div class="thanks-item">ขอบคุณสำหรับทุกสิ่งที่ເຈົ້າເຮັດ</div>
+                <div class="thanks-item">Дякую за все, що ти робиш</div>
+                <div class="thanks-item">Dziękuję za wszystko, co robisz</div>
+                <div class="thanks-item">Hvala za sve što radiš</div>
+                <div class="thanks-item">Děkuji za wszystko, co děláš</div>
+                <div class="thanks-item">Ďakujem za všetko, čo robíš</div>
+                <div class="thanks-item">Tänan kõigest, mida sa teed</div>
+                <div class="thanks-item">Paldies par visu, ko tu darīsi</div>
+                <div class="thanks-item">Pateicos už viską, ką tu darai</div>
+                <div class="thanks-item">谢谢有你</div>
+                <div class="thanks-item">Thank you for being there</div>
+                <div class="thanks-item">Merci d'être là</div>
+                <div class="thanks-item">Danke, dass du da bist</div>
+                <div class="thanks-item">Gracias por estar ahí</div>
+                <div class="thanks-item">Grazie per essere ici</div>
+                <div class="thanks-item">ここにいてくれてありがとう</div>
+                <div class="thanks-item">거기 있어줘서 감사해</div>
+                <div class="thanks-item">Спасибо, что ты там</div>
+                <div class="thanks-item">ขอบคุณที่มีคุณอยู่ที่นั่น</div>
+                <div class="thanks-item">Terima kasih karena kamu ada di sana</div>
+                <div class="thanks-item">Obrigado por estar lá</div>
+                <div class="thanks-item">Multumesc că ești acolo</div>
+                <div class="thanks-item">Tak för att du är där</div>
+                <div class="thanks-item">Tak fordi du er der</div>
+                <div class="thanks-item">Kiitos siitä, että olet siellä</div>
+                <div class="thanks-item">Bedankt dat je daar bent</div>
+                <div class="thanks-item">شكراً لأنك هناك</div>
+                <div class="thanks-item">תודה שאת/אתה שם</div>
+                <div class="thanks-item">धन्यवाद कि तुम वहां हो</div>
+                <div class="thanks-item">شکریہ کہ آپ وہاں ہیں</div>
+                <div class="thanks-item">Cảm ơn vì bạn đang ở đó</div>
+                <div class="thanks-item">ขอบคุณที่ເຈົ້າຢູ່ที่นັ້น</div>
+                <div class="thanks-item">Дякую, що ти там</div>
+                <div class="thanks-item">Dziękuję, że jesteś tam</div>
+                <div class="thanks-item">Hvala što si tamo</div>
+                <div class="thanks-item">Děkuji, že jsi tam</div>
+                <div class="thanks-item">Ďakujem, že si tam</div>
+                <div class="thanks-item">Tänan, et sa oled seal</div>
+                <div class="thanks-item">Paldies, ka tu esi tur</div>
+                <div class="thanks-item">Pateicos, kad tu esi ten</div>
+                <div class="thanks-item">感恩有你</div>
+                <div class="thanks-item">有你真好</div>
+                <div class="thanks-item">幸好有你</div>
+                <div class="thanks-item">Thank you for your love</div>
+                <div class="thanks-item">Merci pour ton amour</div>
+                <div class="thanks-item">Danke für deine Liebe</div>
+                <div class="thanks-item">Gracias por tu amor</div>
+                <div class="thanks-item">Grazie per il tuo amore</div>
+                <div class="thanks-item">あなたの愛をありがとう</div>
+                <div class="thanks-item">네 사랑에 감사해</div>
+                <div class="thanks-item">Спасибо за твою любовь</div>
+                <div class="thanks-item">ขอบคุณสำหรับความรักของคุณ</div>
+                <div class="thanks-item">Terima kasih untuk cintamu</div>
+                <div class="thanks-item">Obrigado pelo seu amor</div>
+                <div class="thanks-item">Multumesc pentru iubirea ta</div>
+                <div class="thanks-item">Tak för din kärlek</div>
+                <div class="thanks-item">Tak for din kærlighed</div>
+                <div class="thanks-item">Kiitos rakastuksesi</div>
+                <div class="thanks-item">Bedankt voor je liefde</div>
+                <div class="thanks-item">شكراً لحبك</div>
+                <div class="thanks-item">תודה על האהבה שלך</div>
+                <div class="thanks-item">तुम्हारे प्यार के लिए धन्यवाद</div>
+                <div class="thanks-item">تیرے پیار کے لیے شکریہ</div>
+                <div class="thanks-item">Cảm ơn cho tình yêu của bạn</div>
+                <div class="thanks-item">ขอบคุณสำหรับຄວາມຮັກຂອງເຈົ້າ</div>
+                <div class="thanks-item">Дякую за твою любов</div>
+                <div class="thanks-item">Dziękuję za twoją miłość</div>
+                <div class="thanks-item">Hvala za tvoju ljubav</div>
+                <div class="thanks-item">Děkuji za tvou lásku</div>
+                <div class="thanks-item">Ďakujem za tvoju lásku</div>
+                <div class="thanks-item">Tänan sinu armastust</div>
+                <div class="thanks-item">Paldies par tavu mīlestību</div>
+                <div class="thanks-item">Pateicos už tavo mylimybę</div>
+                <div class="thanks-item">谢谢陪伴</div>
+                <div class="thanks-item">Thank you for accompanying me</div>
+                <div class="thanks-item">Merci de m'avoir accompagné</div>
+                <div class="thanks-item">Danke, dass du mich begleitet hast</div>
+                <div class="thanks-item">Gracias por acompañarme</div>
+                <div class="thanks-item">Grazie per avermi accompagnato</div>
+                <div class="thanks-item">一緒にいてくれてありがとう</div>
+                <div class="thanks-item">함께 해줘서 감사해</div>
+                <div class="thanks-item">Спасибо, что со мной был(а)</div>
+                <div class="thanks-item">ขอบคุณที่ได้เข้าคู่กับฉัน</div>
+                <div class="thanks-item">Terima kasih telah menemani saya</div>
+                <div class="thanks-item">Obrigado por me acompanhar</div>
+                <div class="thanks-item">Multumesc pentru ca m-ai acompaniat</div>
+                <div class="thanks-item">Tak för att ha följt mig</div>
+                <div class="thanks-item">Tak for at have fulgt mig</div>
+                <div class="thanks-item">Kiitos siitä, että olet seurannut minua</div>
+                <div class="thanks-item">Bedankt voor het meegaan</div>
+                <div class="thanks-item">شكراً لمرافقتك</div>
+                <div class="thanks-item">תודה על התמודדות עםיי</div>
+                <div class="thanks-item">मेरे साथ रहने के लिए धन्यवाद</div>
+                <div class="thanks-item">میرے ساتھ رہنے کے لیے شکریہ</div>
+                <div class="thanks-item">Cảm ơn vì đã ở bên tôi</div>
+                <div class="thanks-item">ขอบคุณที่ໄດ້ຢູ່ข้างข້າພະເຈົ້າ</div>
+                <div class="thanks-item">Дякую за те, що були з мною</div>
+                <div class="thanks-item">Dziękuję za to, že byłeś/bęłaś ze mną</div>
+                <div class="thanks-item">Hvala za to što si bio/bila sa mnom</div>
+                <div class="thanks-item">Děkuji za to, že jsi był/a se mnou</div>
+                <div class="thanks-item">Ďakujem za to, že si bol/a so mnou</div>
+                <div class="thanks-item">Tänan, et olid minuga</div>
+                <div class="thanks-item">Paldies, ka esi bijis/bijusi ar mani</div>
+                <div class="thanks-item">Pateicos, kad esi buvęs/buvusi su manimi</div>
+                <div class="thanks-item">谢啦</div>
+                <div class="thanks-item">谢咯</div>
+                <div class="thanks-item">多谢啦</div>
+                <div class="thanks-item">Thanks</div>
+                <div class="thanks-item">Thx</div>
+                <div class="thanks-item">Tx</div>
+                <div class="thanks-item">Mersi</div>
+                <div class="thanks-item">Dankeschön</div>
+                <div class="thanks-item">Grac</div>
+                <div class="thanks-item">Graz</div>
+                <div class="thanks-item">ありがと</div>
+                <div class="thanks-item">あり</div>
+                <div class="thanks-item">감사</div>
+                <div class="thanks-item">Спасibo</div>
+                <div class="thanks-item">ขอบ</div>
+                <div class="thanks-item">ขอบนะ</div>
+                <div class="thanks-item">Tks</div>
+                <div class="thanks-item">Multumim</div>
+                <div class="thanks-item">Dankjewel</div>
+                <div class="thanks-item">Спасибо большое</div>
+                <div class="thanks-item">Дякую many</div>
+                <div class="thanks-item">Hvala puno</div>
+                <div class="thanks-item">Děkuji hodně</div>
+                <div class="thanks-item">Ďakujem veľmi</div>
+                <div class="thanks-item">Tänan väga</div>
+                <div class="thanks-item">Paldies ļoti</div>
+                <div class="thanks-item">Pateicos labai</div>
+                <div class="thanks-item">Gracias muchísimas</div>
+                <div class="thanks-item">Grazie tantissime</div>
+                <div class="thanks-item">ありがとうございます</div>
+                <div class="thanks-item">고마워요</div>
+                <div class="thanks-item">شكراً جزيلاً</div>
+                <div class="thanks-item">תודה רבה מאוד</div>
+                <div class="thanks-item">धन्यवाद बहुत</div>
+                <div class="thanks-item">بہت شکریہ</div>
+                <div class="thanks-item">Cảm ơn rất nhiều</div>
+                <div class="thanks-item">ขอบคุณมากๆ</div>
+                <div class="thanks-item">Terima kasih banyak sekali</div>
+                <div class="thanks-item">Muito obrigado/a</div>
+                <div class="thanks-item">Multumesc foarte mult</div>
+                <div class="thanks-item">Tack så mycket</div>
+                <div class="thanks-item">Tak skal du have meget</div>
+                <div class="thanks-item">Kiitos paljon</div>
+                <div class="thanks-item">Hartelijk bedankt</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 确保滚动字幕循环流畅
+        const scrollContainer = document.querySelector('.thanks-scroll');
+        const scrollContent = scrollContainer.innerHTML;
+        scrollContainer.innerHTML += scrollContent;
+
+        // 精准控制散乱+不重叠：优化随机参数
+        document.querySelectorAll('.thanks-item').forEach(item => {
+            const randomLeft = Math.random() * 12 - 6; // 缩小左右偏移（±6%）
+            const randomTop = Math.random() * 10 - 5; // 上下偏移（±5px）
+            const jumpDuration = 2.5 + Math.random() * 1.5; // 跃动周期2.5-4秒（更平稳）
+            const jumpRange = 5 + Math.random() * 7; // 跃动幅度5-12px（不碰撞）
+
+            item.style.left = `${randomLeft}%`;
+            item.style.transform = `translateY(${randomTop}px)`;
+            item.style.animation = `jumpScatter ${jumpDuration}s ease-in-out infinite`;
+            
+            // 自定义平稳跃动动画
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes jumpScatter {
+                    0%, 100% { transform: translateY(${randomTop}px); }
+                    50% { transform: translateY(${randomTop - jumpRange}px); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
